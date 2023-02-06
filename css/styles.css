@@ -106,10 +106,18 @@ body {
   color: inherit;
   font-size: 16px;
   line-height: 1.5;
-  /* устанавливем шрифт, удаляем подчеркивание и курсив в ссылок */
+  /* устанавливем шрифт */
 }
 
-.nav-list {
+.social-text {
+  color: var(--hero-text);
+  font-size: 16px;
+  line-height: 1.5;
+  /* устанавливем шрифт*/
+}
+
+.nav-list,
+.social-text {
   font-weight: 500;
   /* устанавливем шрифт меню навигации */
 }
@@ -188,7 +196,8 @@ body {
 }
 
 .work,
-.worker {
+.worker,
+.customer {
   font-size: 36px;
   line-height: 1.11;
   text-align: center;
@@ -267,7 +276,7 @@ body {
 }
 
 .page-haeder {
-  border-bottom: 1px solid #e7e9fc;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .nav {
@@ -307,6 +316,10 @@ body {
   padding-bottom: 100px;
 }
 
+.footer-conteiner {
+  display: flex;
+  column-gap: var(--indent-sections);
+}
 .page-footer .text {
   margin-top: 16px;
 }
@@ -318,6 +331,36 @@ body {
 .headline {
   margin-bottom: 8px;
 }
+
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-text {
+  margin-bottom: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--success-color);
+}
+
+.social-icon {
+  display: block;
+}
 /* ============================================================================== */
 /* PAGE STUDIO */
 
@@ -328,6 +371,17 @@ body {
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/Hero/people-office\ 1.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-headline {
@@ -363,6 +417,19 @@ body {
   flex-basis: calc((100% / var(--column)) - var(--gap-column));
 }
 
+.feature-pictures {
+  height: 112px;
+  background: var(--light-color);
+  border-radius: var(--radius-butoon);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icons {
+  display: block;
+}
 /* SECTION 2 */
 
 .work-section {
@@ -407,6 +474,65 @@ body {
   text-align: center;
 }
 
+.worker-text .text {
+  margin-bottom: 8px;
+}
+
+.worker-link {
+  background-color: var(--primary-brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.worker-link:hover,
+.worker-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
+/* SECTION 4 */
+
+.customer-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--indent-sections);
+  padding-top: calc((var(--indent-sections)) + 10px);
+}
+
+.customer-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 72px;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--gap-column);
+}
+
+.customer-link {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-icon {
+  display: block;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  border: 1px solid var(--subtle-text-color);
+  border-radius: 4px;
+  fill: var(--subtle-text-color);
+}
+
+.customer-icon:hover,
+.customer-icon:focus {
+  fill: var(--pressed-state-color);
+  border: 1px solid var(--pressed-state-color);
+}
+
 /* ============================================================================== */
 /* PAGE PORTFOLIO */
 
@@ -435,10 +561,17 @@ body {
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--accent-color);
   border-radius: var(--radius-butoon);
 }
 
+.filters-button:hover,
+.filters-button:focus {
+  background: var(--pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border: none;
+}
 /**
   |============================
   | FINGER
@@ -466,6 +599,13 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--accent-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
   border-top: none;
+}
+
+.finger-item:hover {
+  border: 1px solid var(--light-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
